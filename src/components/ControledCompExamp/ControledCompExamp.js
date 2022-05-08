@@ -21,7 +21,7 @@ class ControledCompExamp extends React.Component {
     }
 
     handleSubmit(e) {
-        console.log(this.state.textArea);
+        console.log(this.state);
         e.preventDefault();
     }
 
@@ -39,11 +39,20 @@ class ControledCompExamp extends React.Component {
             <div>
                 
                 <form onSubmit={this.handleSubmit}>
+
                     <input type='text' value={this.state.value} onChange={this.handleChange}/>
+
                     <textarea value={this.state.textArea} onChange={(e) => this.handleChangeTexAr(e)}/>
-                    <button>
-                        Get value
-                    </button>
+
+                    <select>
+                        <option value>Number 1</option>
+                        <option>Number 2</option>
+                        <option>Number 3</option>
+                        <option>Number 4</option>
+                    </select>
+
+                    <button>Get value</button>
+
                 </form>
 
             </div>
