@@ -5,7 +5,11 @@ class ControledCompExamp extends React.Component {
     render() {
 
         return(
-            
+            <div>
+                ControledCompExamp
+            </div>
         )
     }
 }
+
+export default ControledCompExamp;
