@@ -16,9 +16,10 @@ class ControledCompExamp extends React.Component {
     }
 
     handleChange(e) {
-        const {name, value} = e.target;
+        const {type, name, value, checked} = e.target;
+        const currValue = type === 'checkbox' ? checked: value;
         this.setState({
-            [name] : value
+            [name] : currValue
         });
     }
 
@@ -51,7 +52,7 @@ class ControledCompExamp extends React.Component {
 
                     <input type='text' name='input' value={this.state.input} onChange={this.handleChange}/>
 
-                    <input type='checkbox' name='checkbox' value={this.state.input} onChange={this.handleChange}/>
+                    <input type='checkbox' name='checkbox' value={this.state.checkbox} onChange={this.handleChange}/>
 
                     <textarea name='textArea' value={this.state.textArea} onChange={this.handleChange}/>
 
