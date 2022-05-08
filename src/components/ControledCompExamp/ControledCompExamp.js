@@ -3,7 +3,8 @@ import React from 'react';
 class ControledCompExamp extends React.Component {
 
     state = {
-        value: 'type your text here'
+        value: 'type your text here',
+        textArea: 'Area for your text'
     }
 
     constructor(props) {
@@ -20,8 +21,15 @@ class ControledCompExamp extends React.Component {
     }
 
     handleSubmit(e) {
-        console.log(this.state.value);
+        console.log(this.state.textArea);
         e.preventDefault();
+    }
+
+    handleChangeTexAr(e) {
+        const textArea = e.target.value;
+        this.setState({
+            textArea
+        });
     }
 
     render() {
@@ -32,6 +40,7 @@ class ControledCompExamp extends React.Component {
                 
                 <form onSubmit={this.handleSubmit}>
                     <input type='text' value={this.state.value} onChange={this.handleChange}/>
+                    <textarea value={this.state.textArea} onChange={(e) => this.handleChangeTexAr(e)}/>
                     <button>
                         Get value
                     </button>
