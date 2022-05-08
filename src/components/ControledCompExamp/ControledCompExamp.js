@@ -3,8 +3,10 @@ import React from 'react';
 class ControledCompExamp extends React.Component {
 
     state = {
-        value: 'type your text here',
-        textArea: 'Area for your text'
+        input: 'type your text here',
+        textArea: 'Area for your text',
+        select: 'num1',
+        checkbox: false
     }
 
     constructor(props) {
@@ -14,9 +16,9 @@ class ControledCompExamp extends React.Component {
     }
 
     handleChange(e) {
-        const value = e.target.value;
+        const {name, value} = e.target;
         this.setState({
-            value
+            [name] : value
         });
     }
 
@@ -25,12 +27,19 @@ class ControledCompExamp extends React.Component {
         e.preventDefault();
     }
 
-    handleChangeTexAr(e) {
-        const textArea = e.target.value;
-        this.setState({
-            textArea
-        });
-    }
+    // handleChangeTexAr(e) {
+    //     const textArea = e.target.value;
+    //     this.setState({
+    //         textArea
+    //     });
+    // }
+    
+    // handleChangeSelect(e) {
+    //     const select = e.target.value;
+    //     this.setState({
+    //         select
+    //     });
+    // }
 
     render() {
 
@@ -40,15 +49,17 @@ class ControledCompExamp extends React.Component {
                 
                 <form onSubmit={this.handleSubmit}>
 
-                    <input type='text' value={this.state.value} onChange={this.handleChange}/>
+                    <input type='text' name='input' value={this.state.input} onChange={this.handleChange}/>
 
-                    <textarea value={this.state.textArea} onChange={(e) => this.handleChangeTexAr(e)}/>
+                    <input type='checkbox' name='checkbox' value={this.state.input} onChange={this.handleChange}/>
 
-                    <select>
-                        <option value>Number 1</option>
-                        <option>Number 2</option>
-                        <option>Number 3</option>
-                        <option>Number 4</option>
+                    <textarea name='textArea' value={this.state.textArea} onChange={this.handleChange}/>
+
+                    <select name='select' value={this.state.select} onChange={this.handleChange}>
+                        <option value='num1'>Number 1</option>
+                        <option value='num2'>Number 2</option>
+                        <option value='num3'>Number 3</option>
+                        <option value='num4'>Number 4</option>
                     </select>
 
                     <button>Get value</button>
