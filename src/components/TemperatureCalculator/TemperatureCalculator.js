@@ -1,3 +1,5 @@
+import React from "react";
+
 const scaleNames = {
     c: 'Celsius',
     f: 'Fahrenheit'
@@ -68,9 +70,11 @@ const scaleNames = {
     }
   
     render() {
-      const scale = this.state.scale;
-      const temperature = this.state.temperature;
+      
+      const { scale, temperature } = this.state;
+
       const celsius = scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;
+
       const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
   
       return (
@@ -89,4 +93,6 @@ const scaleNames = {
       );
     }
   }
+
+  export default Calculator;
   
