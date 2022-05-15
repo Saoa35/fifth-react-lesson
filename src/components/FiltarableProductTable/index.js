@@ -92,11 +92,3 @@ class ProductCategoryRow extends React.Component {
       );
     }
   }
-  
-  
-  
-   
-  ReactDOM.render(
-    <FilterableProductTable products={PRODUCTS} />,
-    document.getElementById('container')
-  );
