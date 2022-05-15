@@ -8,9 +8,9 @@ function App() {
     <div className="App">
       {/* <ControledCompExamp/> */}
 
-      {/* <PropTypesExample name='Alex' age={37}/> */}
+      <PropTypesExample name='Alex' age={37}/>
 
-      <Calculator/>
+      {/* <Calculator/> */}
     </div>
   );
 }
